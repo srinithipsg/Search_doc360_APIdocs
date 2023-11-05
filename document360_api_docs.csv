@@ -1,0 +1,1255 @@
+,url,Title,http_Request,API_endpoint,Code
+0,https://apidocs.document360.com/apidocs/get-article,Gets an article,GET,/v2/Articles/{articleId}/{langCode},"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en?isForDisplay=False&isPublished=False&appendSASToken=True' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+1,https://apidocs.document360.com/apidocs/gets-all-version-languages-in-the-project,Gets all version languages in the project,GET,/v2/Language/{projectVersionId},"curl --request GET \
+  --url https://apihub.document360.io/v2/Language/%7BprojectVersionId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+2,https://apidocs.document360.com/apidocs/get-status-of-the-import,Get the status of import,GET,/v2/Project/Import/{importId},"curl --request GET \
+  --url https://apihub.document360.io/v2/Project/Import/%7BimportId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+3,https://apidocs.document360.com/apidocs/import-documentation,Import documentation,POST,/v2/Project/Import,"{
+ ""source_documentation_url"": ""string"",
+ ""publish_article"": true,
+ ""import_by"": ""string""
+}
+curl --request POST \
+  --url https://apihub.document360.io/v2/Project/Import \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""source_documentation_url"": ""string"",
+ ""publish_article"": true,
+ ""import_by"": ""string""
+}'
+
+
+"
+4,https://apidocs.document360.com/apidocs/export-documentation,Start a new export,POST,/v2/Project/Export,"
+{
+ ""entity"": ""string"",
+ ""version_id"": [
+  ""string""
+ ],
+ ""selected_languages"": [
+  {
+   ""code"": ""string"",
+   ""id"": ""string"",
+   ""version_id"": ""string""
+
+
+ ""selected_categories"": [
+  {
+   ""language_id"": ""string"",
+   ""id"": ""string"",
+   ""version_id"": ""string""
+  }
+ ],
+curl --request POST \
+  --url https://apihub.document360.io/v2/Project/Export \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""entity"": ""string"",
+ ""version_id"": [
+  ""string""
+ ],
+
+
+   ""code"": ""string"",
+   ""id"": ""string"",
+   ""version_id"": ""string""
+  }
+ ],
+ ""selected_categories"": [
+  {
+
+
+"
+5,https://apidocs.document360.com/apidocs/get-status-of-the-export,Get the status of export,GET,/v2/Project/Export/{exportId},"curl --request GET \
+  --url https://apihub.document360.io/v2/Project/Export/%7BexportId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+6,https://apidocs.document360.com/apidocs/get-roles,Get all available roles including default as well as custom roles,GET,/v2/Teams/roles,"curl --request GET \
+  --url https://apihub.document360.io/v2/Teams/roles \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+7,https://apidocs.document360.com/apidocs/update-portal-role,Update the portal role of a individual user,PUT,/v2/Teams/{userId}/portal,"{
+ ""associated_portal_role_id"": ""string"",
+ ""is_invitation_id"": true
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D/portal \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""associated_portal_role_id"": ""string"",
+ ""is_invitation_id"": true
+}'
+
+
+"
+8,https://apidocs.document360.com/apidocs/update-content-role,Update the content roles of an individual user,PUT,/v2/Teams/{userId}/content,"{
+ ""content_permissions"": [
+  {
+   ""associated_content_role_id"": ""string"",
+   ""access_scope"": {
+    ""access_level"": 1,
+    ""categories"": [
+     {
+      ""project_version_id"": ""string"",
+      ""category_id"": ""string"",
+
+
+    ],
+    ""project_versions"": [
+     ""string""
+    ],
+    ""languages"": [
+     {
+      ""project_version_id"": ""string"",
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D/content \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""content_permissions"": [
+  {
+   ""associated_content_role_id"": ""string"",
+   ""access_scope"": {
+
+
+     {
+      ""project_version_id"": ""string"",
+      ""category_id"": ""string"",
+      ""language_code"": ""string""
+     }
+    ],
+    ""project_versions"": [
+
+
+"
+9,https://apidocs.document360.com/apidocs/get-users,Get all team accounts,GET,/v2/Teams,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Teams?skip=0&take=20' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+10,https://apidocs.document360.com/apidocs/delete-user,Deletes a user with an ID,DELETE,/v2/Teams/{userId},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+11,https://apidocs.document360.com/apidocs/email-validation,Checks if email already exists in the project,GET,/v2/Teams/email-exists,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Teams/email-exists?isAnSsoUser=False' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+12,https://apidocs.document360.com/apidocs/update-user-group,Modify the groups associated with the user,PUT,/v2/Teams/{userId}/groups,"{
+ ""associated_groups"": [
+  ""string""
+ ],
+ ""is_invitation_id"": true
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D/groups \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""associated_groups"": [
+  ""string""
+ ],
+ ""is_invitation_id"": true
+
+
+
+"
+13,https://apidocs.document360.com/apidocs/get-user,Get complete user details by id,GET,/v2/Teams/{userId},"curl --request GET \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+14,https://apidocs.document360.com/apidocs/get-team-groups,Get all user groups,GET,/v2/Teams/groups,"curl --request GET \
+  --url https://apihub.document360.io/v2/Teams/groups \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+15,https://apidocs.document360.com/apidocs/add-a-user,Adds a new Team Account,POST,/v2/Teams,"{
+ ""email_id"": ""string"",
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""invited_by"": ""string"",
+ ""is_sso_user"": true,
+ ""skip_sso_invitation_email"": true,
+ ""associated_portal_role_id"": ""string"",
+ ""content_permissions"": [
+  {
+
+
+    ""access_level"": 1,
+    ""categories"": [
+     {
+      ""project_version_id"": ""string"",
+      ""category_id"": ""string"",
+      ""language_code"": ""string""
+     }
+curl --request POST \
+  --url https://apihub.document360.io/v2/Teams \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""email_id"": ""string"",
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""invited_by"": ""string"",
+
+
+ ""associated_portal_role_id"": ""string"",
+ ""content_permissions"": [
+  {
+   ""associated_content_role_id"": ""string"",
+   ""access_scope"": {
+    ""access_level"": 1,
+    ""categories"": [
+
+
+"
+16,https://apidocs.document360.com/apidocs/add-reader-group,Add a new reader group,POST,/v2/Readers/groups,"{
+ ""title"": ""string"",
+ ""description"": ""string"",
+ ""associated_readers"": [
+  ""string""
+ ],
+ ""access_scope"": {
+  ""access_level"": 1,
+  ""categories"": [
+   {
+
+
+    ""language_code"": ""string""
+   }
+  ],
+  ""project_versions"": [
+   ""string""
+  ],
+  ""languages"": [
+curl --request POST \
+  --url https://apihub.document360.io/v2/Readers/groups \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""title"": ""string"",
+ ""description"": ""string"",
+ ""associated_readers"": [
+  ""string""
+
+
+  ""access_level"": 1,
+  ""categories"": [
+   {
+    ""project_version_id"": ""string"",
+    ""category_id"": ""string"",
+    ""language_code"": ""string""
+   }
+
+
+"
+17,https://apidocs.document360.com/apidocs/get-reader-group,Get a reader group via group id,GET,/v2/Readers/groups/{groupId},"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Readers/groups/%7BgroupId%7D?offSet=1' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+18,https://apidocs.document360.com/apidocs/delete-reader-group,Deletes a reader group,DELETE,/v2/Readers/groups/{groupId},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Readers/groups/%7BgroupId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+19,https://apidocs.document360.com/apidocs/get-readers,Get all available readers from the project,GET,/v2/Readers,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Readers?offSet=1' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+20,https://apidocs.document360.com/apidocs/get-reader-groups,Get all reader groups,GET,/v2/Readers/groups,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Readers/groups?offSet=1&excludeReaders=False' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+21,https://apidocs.document360.com/apidocs/get-article-versions,Gets all article versions,GET,/v2/Articles/{articleId}/{langCode}/versions,"curl --request GET \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/versions \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+22,https://apidocs.document360.com/apidocs/get-status-of-the-export,Get the status of export,GET,/v2/Project/Export/{exportId},"curl --request GET \
+  --url https://apihub.document360.io/v2/Project/Export/%7BexportId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+23,https://apidocs.document360.com/apidocs/export-documentation,Start a new export,POST,/v2/Project/Export,"
+{
+ ""entity"": ""string"",
+ ""version_id"": [
+  ""string""
+ ],
+ ""selected_languages"": [
+  {
+   ""code"": ""string"",
+   ""id"": ""string"",
+   ""version_id"": ""string""
+
+
+ ""selected_categories"": [
+  {
+   ""language_id"": ""string"",
+   ""id"": ""string"",
+   ""version_id"": ""string""
+  }
+ ],
+curl --request POST \
+  --url https://apihub.document360.io/v2/Project/Export \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""entity"": ""string"",
+ ""version_id"": [
+  ""string""
+ ],
+
+
+   ""code"": ""string"",
+   ""id"": ""string"",
+   ""version_id"": ""string""
+  }
+ ],
+ ""selected_categories"": [
+  {
+
+
+"
+24,https://apidocs.document360.com/apidocs/get-project-versions,Gets list of project versions,GET,/v2/ProjectVersions,"curl --request GET \
+  --url https://apihub.document360.io/v2/ProjectVersions \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+25,https://apidocs.document360.com/apidocs/add-a-user,Adds a new Team Account,POST,/v2/Teams,"{
+ ""email_id"": ""string"",
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""invited_by"": ""string"",
+ ""is_sso_user"": true,
+ ""skip_sso_invitation_email"": true,
+ ""associated_portal_role_id"": ""string"",
+ ""content_permissions"": [
+  {
+
+
+    ""access_level"": 1,
+    ""categories"": [
+     {
+      ""project_version_id"": ""string"",
+      ""category_id"": ""string"",
+      ""language_code"": ""string""
+     }
+curl --request POST \
+  --url https://apihub.document360.io/v2/Teams \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""email_id"": ""string"",
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""invited_by"": ""string"",
+
+
+ ""associated_portal_role_id"": ""string"",
+ ""content_permissions"": [
+  {
+   ""associated_content_role_id"": ""string"",
+   ""access_scope"": {
+    ""access_level"": 1,
+    ""categories"": [
+
+
+"
+26,https://apidocs.document360.com/apidocs/update-content-role,Update the content roles of an individual user,PUT,/v2/Teams/{userId}/content,"{
+ ""content_permissions"": [
+  {
+   ""associated_content_role_id"": ""string"",
+   ""access_scope"": {
+    ""access_level"": 1,
+    ""categories"": [
+     {
+      ""project_version_id"": ""string"",
+      ""category_id"": ""string"",
+
+
+    ],
+    ""project_versions"": [
+     ""string""
+    ],
+    ""languages"": [
+     {
+      ""project_version_id"": ""string"",
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D/content \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""content_permissions"": [
+  {
+   ""associated_content_role_id"": ""string"",
+   ""access_scope"": {
+
+
+     {
+      ""project_version_id"": ""string"",
+      ""category_id"": ""string"",
+      ""language_code"": ""string""
+     }
+    ],
+    ""project_versions"": [
+
+
+"
+27,https://apidocs.document360.com/apidocs/update-user-group,Modify the groups associated with the user,PUT,/v2/Teams/{userId}/groups,"{
+ ""associated_groups"": [
+  ""string""
+ ],
+ ""is_invitation_id"": true
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Teams/%7BuserId%7D/groups \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""associated_groups"": [
+  ""string""
+ ],
+ ""is_invitation_id"": true
+
+
+
+"
+28,https://apidocs.document360.com/apidocs/gets-article-to-be-translated,Gets articles by translation status,GET,/v2/Translations/{projectVersionId}/{langCode},"curl --request GET \
+  --url https://apihub.document360.io/v2/Translations/%7BprojectVersionId%7D/en \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+29,https://apidocs.document360.com/apidocs/get-team-groups,Get all user groups,GET,/v2/Teams/groups,"curl --request GET \
+  --url https://apihub.document360.io/v2/Teams/groups \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+30,https://apidocs.document360.com/apidocs/update-reader-group,Updates a reader group,PUT,/v2/Readers/groups/{groupId},"{
+ ""title"": ""string"",
+ ""description"": ""string"",
+ ""associated_readers"": [
+  ""string""
+ ],
+ ""access_scope"": {
+  ""access_level"": 1,
+  ""categories"": [
+   {
+
+
+    ""language_code"": ""string""
+   }
+  ],
+  ""project_versions"": [
+   ""string""
+  ],
+  ""languages"": [
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Readers/groups/%7BgroupId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""title"": ""string"",
+ ""description"": ""string"",
+ ""associated_readers"": [
+  ""string""
+
+
+  ""access_level"": 1,
+  ""categories"": [
+   {
+    ""project_version_id"": ""string"",
+    ""category_id"": ""string"",
+    ""language_code"": ""string""
+   }
+
+
+"
+31,https://apidocs.document360.com/apidocs/get-reader-groups,Get all reader groups,GET,/v2/Readers/groups,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Readers/groups?offSet=1&excludeReaders=False' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+32,https://apidocs.document360.com/apidocs/delete-reader,Deletes a reader from the project,DELETE,/v2/Readers/{readerId},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Readers/%7BreaderId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+33,https://apidocs.document360.com/apidocs/add-reader,Add a new reader,POST,/v2/Readers,"{
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""email_id"": ""string"",
+ ""associated_reader_groups"": [
+  ""string""
+ ],
+ ""access_scope"": {
+  ""access_level"": 1,
+  ""categories"": [
+
+
+    ""category_id"": ""string"",
+    ""language_code"": ""string""
+   }
+  ],
+  ""project_versions"": [
+   ""string""
+  ],
+curl --request POST \
+  --url https://apihub.document360.io/v2/Readers \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""email_id"": ""string"",
+ ""associated_reader_groups"": [
+
+
+ ""access_scope"": {
+  ""access_level"": 1,
+  ""categories"": [
+   {
+    ""project_version_id"": ""string"",
+    ""category_id"": ""string"",
+    ""language_code"": ""string""
+
+
+"
+34,https://apidocs.document360.com/apidocs/get-article-by-version,Gets article by a version number,GET,/v2/Articles/{articleId}/{langCode}/versions/{versionNumber},"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/versions/%7BversionNumber%7D?isForDisplay=False&appendSASToken=True' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+35,https://apidocs.document360.com/apidocs/search-inside-project-version,Searches for a phrase inside project version,GET,/v2/ProjectVersions/{projectVersionId}/{langCode},"curl --request GET \
+  --url 'https://apihub.document360.io/v2/ProjectVersions/%7BprojectVersionId%7D/en?page=0&hitsPerPage=10' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+36,https://apidocs.document360.com/apidocs/get-all-api-reference-logs,Get all API reference logs,GET,/v2/APIReferences/{apiReferenceId}/Logs,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/APIReferences/%7BapiReferenceId%7D/Logs?page=1&resultsPerPage=5' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+37,https://apidocs.document360.com/apidocs/update-reader,Updates a reader,PUT,/v2/Readers/{readerId},"{
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""associated_reader_groups"": [
+  ""string""
+ ],
+ ""access_scope"": {
+  ""access_level"": 1,
+  ""categories"": [
+   {
+
+
+    ""language_code"": ""string""
+   }
+  ],
+  ""project_versions"": [
+   ""string""
+  ],
+  ""languages"": [
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Readers/%7BreaderId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""first_name"": ""string"",
+ ""last_name"": ""string"",
+ ""associated_reader_groups"": [
+  ""string""
+
+
+  ""access_level"": 1,
+  ""categories"": [
+   {
+    ""project_version_id"": ""string"",
+    ""category_id"": ""string"",
+    ""language_code"": ""string""
+   }
+
+
+"
+38,https://apidocs.document360.com/apidocs/get-article-settings,Gets settings for the article,GET,/v2/Articles/{articleId}/{langCode}/settings,"curl --request GET \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/settings \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+39,https://apidocs.document360.com/apidocs/project-version-categories,Gets list of categories within project version,GET,/v2/ProjectVersions/{projectVersionId}/categories,"curl --request GET \
+  --url 'https://apihub.document360.io/v2/ProjectVersions/%7BprojectVersionId%7D/categories?includeCategoryDescription=False' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+40,https://apidocs.document360.com/apidocs/get-errors-and-alerts-of-a-log,Get errors and alerts of a log,GET,/v2/APIReferences/{apiReferenceId}/Logs/{logId},"curl --request GET \
+  --url https://apihub.document360.io/v2/APIReferences/%7BapiReferenceId%7D/Logs/%7BlogId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+41,https://apidocs.document360.com/apidocs/bulk-publish-articles,Publishes multiple articles,POST,/v2/Articles/bulkpublish/{langCode},"[
+ {
+  ""article_id"": ""string"",
+  ""user_id"": ""string"",
+  ""version_number"": 1,
+  ""publish_message"": ""string""
+ }
+]
+curl --request POST \
+  --url https://apihub.document360.io/v2/Articles/bulkpublish/en \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '[
+ {
+  ""article_id"": ""string"",
+  ""user_id"": ""string"",
+  ""version_number"": 1,
+
+
+]'
+
+
+"
+42,https://apidocs.document360.com/apidocs/project-version-articles,Gets list of articles within project version,GET,/v2/ProjectVersions/{projectVersionId}/articles,"curl --request GET \
+  --url https://apihub.document360.io/v2/ProjectVersions/%7BprojectVersionId%7D/articles \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+43,https://apidocs.document360.com/apidocs/publishes-an-api-reference,Publishes an API reference,POST,/v2/APIReferences/publish,"{
+ ""api_reference_id"": ""string"",
+ ""project_version_id"": ""string"",
+ ""user_id"": ""string""
+}
+curl --request POST \
+  --url https://apihub.document360.io/v2/APIReferences/publish \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""api_reference_id"": ""string"",
+ ""project_version_id"": ""string"",
+ ""user_id"": ""string""
+}'
+
+
+"
+44,https://apidocs.document360.com/apidocs/add-an-article,Adds an article to an existing category,POST,/v2/Articles,"{
+ ""title"": ""string"",
+ ""content"": ""string"",
+ ""category_id"": ""string"",
+ ""project_version_id"": ""string"",
+ ""order"": 1,
+ ""user_id"": ""string"",
+ ""content_type"": 1
+}
+curl --request POST \
+  --url https://apihub.document360.io/v2/Articles \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""title"": ""string"",
+ ""content"": ""string"",
+ ""category_id"": ""string"",
+ ""project_version_id"": ""string"",
+
+
+ ""content_type"": 1
+}'
+
+
+"
+45,https://apidocs.document360.com/apidocs/gets-list-of-api-reference-within-project-version,Gets list of api reference within project version,GET,/v2/ProjectVersions/{projectVersionId}/apireferences,"curl --request GET \
+  --url https://apihub.document360.io/v2/ProjectVersions/%7BprojectVersionId%7D/apireferences \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+46,https://apidocs.document360.com/apidocs/import-the-api-reference-spec-file,Import the API reference spec file,POST,/v2/APIReferences,"curl --request POST \
+  --url https://apihub.document360.io/v2/APIReferences \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: multipart/form-data'
+
+"
+47,https://apidocs.document360.com/apidocs/bulk-add-articles,Adds multiple articles,POST,/v2/Articles/bulkcreate,"[
+ {
+  ""title"": ""string"",
+  ""content"": ""string"",
+  ""category_id"": ""string"",
+  ""project_version_id"": ""string"",
+  ""order"": 1,
+  ""user_id"": ""string"",
+  ""content_type"": 1
+ }
+
+curl --request POST \
+  --url https://apihub.document360.io/v2/Articles/bulkcreate \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '[
+ {
+  ""title"": ""string"",
+  ""content"": ""string"",
+  ""category_id"": ""string"",
+
+
+  ""user_id"": ""string"",
+  ""content_type"": 1
+ }
+]'
+
+
+"
+48,https://apidocs.document360.com/apidocs/resync-the-api-reference-spec-file,Resync the API reference spec file,PUT,/v2/APIReferences,"curl --request PUT \
+  --url https://apihub.document360.io/v2/APIReferences \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: multipart/form-data'
+
+"
+49,https://apidocs.document360.com/apidocs/publish-an-article,Publishes an article with an id,POST,/v2/Articles/{articleId}/{langCode}/publish,"{
+ ""user_id"": ""string"",
+ ""version_number"": 1,
+ ""publish_message"": ""string""
+}
+curl --request POST \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/publish \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""user_id"": ""string"",
+ ""version_number"": 1,
+ ""publish_message"": ""string""
+}'
+
+
+"
+50,https://apidocs.document360.com/apidocs/deletes-an-api-reference,Deletes an API reference,DELETE,/v2/APIReferences,"curl --request DELETE \
+  --url https://apihub.document360.io/v2/APIReferences \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+51,https://apidocs.document360.com/apidocs/update-article-settings,Updates settings for the article,PUT,/v2/Articles/{articleId}/{langCode}/settings,"{
+ ""slug"": ""string"",
+ ""seo_title"": ""string"",
+ ""description"": ""string"",
+ ""allow_comments"": true,
+ ""show_table_of_contents"": true,
+ ""tags"": [
+  ""string""
+ ],
+ ""status_indicator"": 1,
+
+
+ ""related_articles"": [
+  ""string""
+ ],
+ ""content_type"": 1
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/settings \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""slug"": ""string"",
+ ""seo_title"": ""string"",
+ ""description"": ""string"",
+ ""allow_comments"": true,
+
+
+  ""string""
+ ],
+ ""status_indicator"": 1,
+ ""status_indicator_expiry_date"": ""string"",
+ ""exclude_from_search"": true,
+ ""related_articles"": [
+  ""string""
+
+
+"
+52,https://apidocs.document360.com/apidocs/fork-an-article,Forks an article with an id,PUT,/v2/Articles/{articleId}/fork,"{
+ ""version_number"": 1,
+ ""user_id"": ""string"",
+ ""lang_code"": ""string""
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/fork \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""version_number"": 1,
+ ""user_id"": ""string"",
+ ""lang_code"": ""string""
+}'
+
+
+"
+53,https://apidocs.document360.com/apidocs/bulk-update-articles,Updates multiple articles,PUT,/v2/Articles/bulkupdate,"[
+ {
+  ""article_id"": ""string"",
+  ""lang_code"": ""string"",
+  ""title"": ""string"",
+  ""content"": ""string"",
+  ""html_content"": ""string"",
+  ""category_id"": ""string"",
+  ""hidden"": true,
+  ""version_number"": 1,
+
+
+ }
+]
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Articles/bulkupdate \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '[
+ {
+  ""article_id"": ""string"",
+  ""lang_code"": ""string"",
+  ""title"": ""string"",
+
+
+  ""category_id"": ""string"",
+  ""hidden"": true,
+  ""version_number"": 1,
+  ""translation_option"": ""string"",
+  ""source"": ""string""
+ }
+]'
+
+
+"
+54,https://apidocs.document360.com/apidocs/update-the-article-description,Update the Article Description,PUT,/v2/Articles/{articleId}/{langCode}/updateDescription,"curl --request PUT \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/updateDescription \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+55,https://apidocs.document360.com/apidocs/update-an-article,Updates an article with the ID,PUT,/v2/Articles/{articleId}/{langCode},"{
+ ""title"": ""string"",
+ ""content"": ""string"",
+ ""html_content"": ""string"",
+ ""category_id"": ""string"",
+ ""hidden"": true,
+ ""version_number"": 1,
+ ""translation_option"": ""string"",
+ ""source"": ""string""
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""title"": ""string"",
+ ""content"": ""string"",
+ ""html_content"": ""string"",
+ ""category_id"": ""string"",
+
+
+ ""translation_option"": ""string"",
+ ""source"": ""string""
+}'
+
+
+"
+56,https://apidocs.document360.com/apidocs/delete-article-version,Deletes an article version,DELETE,/v2/Articles/{articleId}/{langCode}/version/{versionNumber},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D/en/version/%7BversionNumber%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+57,https://apidocs.document360.com/apidocs/delete-an-article,Deletes an article with an ID,DELETE,/v2/Articles/{articleId},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Articles/%7BarticleId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+58,https://apidocs.document360.com/apidocs/delete-multiple-article-versions,Delete multiple article versions,DELETE,/v2/Articles/bulkdelete-article-versions,"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Articles/bulkdelete-article-versions \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+59,https://apidocs.document360.com/apidocs/bulk-delete-articles,Deletes multiple articles,DELETE,/v2/Articles/bulkdelete,"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Articles/bulkdelete \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+60,https://apidocs.document360.com/apidocs/get-category,Get category with an ID,GET,/v2/Categories/{categoryId},"curl --request GET \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+61,https://apidocs.document360.com/apidocs/get-category-page-with-an-id,Get category page with an ID,GET,/v2/Categories/{categoryId}/content/{langCode},"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/content/en?isForDisplay=False&isPublished=False&appendSASToken=True' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+62,https://apidocs.document360.com/apidocs/get-category-page-content-with-an-id,Get category page content with an ID,GET,/v2/Categories/{categoryId}/versions/{langCode}/{versionNumber},"curl --request GET \
+  --url 'https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/versions/en/%7BversionNumber%7D?isForDisplay=False&appendSASToken=True' \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+63,https://apidocs.document360.com/apidocs/get-category-page-versions,Get category page versions,GET,/v2/Categories/{categoryId}/{langCode}versions,"curl --request GET \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/enversions \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+64,https://apidocs.document360.com/apidocs/get-settings-for-the-category,Get settings for the Category,GET,/v2/Categories/{categoryId}/{langCode}/settings,"curl --request GET \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/en/settings \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+65,https://apidocs.document360.com/apidocs/add-a-category,Adds a new category,POST,/v2/Categories,"{
+ ""name"": ""string"",
+ ""project_version_id"": ""string"",
+ ""order"": 1,
+ ""parent_category_id"": ""string"",
+ ""content"": ""string"",
+ ""category_type"": 1,
+ ""user_id"": ""string"",
+ ""content_type"": 1
+}
+curl --request POST \
+  --url https://apihub.document360.io/v2/Categories \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""name"": ""string"",
+ ""project_version_id"": ""string"",
+ ""order"": 1,
+ ""parent_category_id"": ""string"",
+
+
+ ""user_id"": ""string"",
+ ""content_type"": 1
+}'
+
+
+"
+66,https://apidocs.document360.com/apidocs/adds-multiple-categories,Adds multiple Categories,POST,/v2/Categories/bulkcreate,"[
+ {
+  ""name"": ""string"",
+  ""project_version_id"": ""string"",
+  ""order"": 1,
+  ""parent_category_id"": ""string"",
+  ""content"": ""string"",
+  ""category_type"": 1,
+  ""user_id"": ""string"",
+  ""content_type"": 1
+
+
+curl --request POST \
+  --url https://apihub.document360.io/v2/Categories/bulkcreate \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '[
+ {
+  ""name"": ""string"",
+  ""project_version_id"": ""string"",
+  ""order"": 1,
+
+
+  ""category_type"": 1,
+  ""user_id"": ""string"",
+  ""content_type"": 1
+ }
+]'
+
+
+"
+67,https://apidocs.document360.com/apidocs/publishes-an-category-with-an-id,Publishes an category with an id,POST,/v2/Categories/{categoryId}/publish,"{
+ ""user_id"": ""string"",
+ ""version_number"": 1,
+ ""publish_message"": ""string""
+}
+curl --request POST \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/publish \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""user_id"": ""string"",
+ ""version_number"": 1,
+ ""publish_message"": ""string""
+}'
+
+
+"
+68,https://apidocs.document360.com/apidocs/publishes-multiple-categories,Publishes multiple categories,POST,/v2/Categories/bulkpublish/{langCode},"[
+ {
+  ""category_id"": ""string"",
+  ""user_id"": ""string"",
+  ""version_number"": 1,
+  ""publish_message"": ""string""
+ }
+]
+curl --request POST \
+  --url https://apihub.document360.io/v2/Categories/bulkpublish/en \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '[
+ {
+  ""category_id"": ""string"",
+  ""user_id"": ""string"",
+  ""version_number"": 1,
+
+
+]'
+
+
+"
+69,https://apidocs.document360.com/apidocs/update-a-category-page-content-with-the-id,Update a category page content with the ID,PUT,/v2/Categories/{categoryId}/content/{langCode},"{
+ ""title"": ""string"",
+ ""content"": ""string"",
+ ""html_content"": ""string"",
+ ""block_content"": ""string"",
+ ""version_number"": 1,
+ ""translation_option"": ""string"",
+ ""source"": ""string"",
+ ""updated_by"": ""string""
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/content/en \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""title"": ""string"",
+ ""content"": ""string"",
+ ""html_content"": ""string"",
+ ""block_content"": ""string"",
+
+
+ ""source"": ""string"",
+ ""updated_by"": ""string""
+}'
+
+
+"
+70,https://apidocs.document360.com/apidocs/update-the-category-description,Update the category description,PUT,/v2/Categories/{categoryId}/{langCode}/updateDescription,"curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/en/updateDescription \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+71,https://apidocs.document360.com/apidocs/update-a-category,Update a category with the ID,PUT,/v2/Categories/{categoryId},"{
+ ""name"": ""string"",
+ ""order"": 1,
+ ""parent_category_id"": ""string"",
+ ""hidden"": true,
+ ""icon"": ""string"",
+ ""language"": ""string""
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""name"": ""string"",
+ ""order"": 1,
+ ""parent_category_id"": ""string"",
+ ""hidden"": true,
+
+
+}'
+
+
+"
+72,https://apidocs.document360.com/apidocs/update-settings-for-the-category,Update settings for the category,PUT,/v2/Categories/{categoryId}/{langCode}/settings,"{
+ ""slug"": ""string"",
+ ""seo_title"": ""string"",
+ ""description"": ""string"",
+ ""allow_comments"": true,
+ ""show_table_of_contents"": true,
+ ""tags"": [
+  ""string""
+ ],
+ ""status_indicator"": 1,
+
+
+ ""related_articles"": [
+  ""string""
+ ],
+ ""content_type"": 1
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/en/settings \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""slug"": ""string"",
+ ""seo_title"": ""string"",
+ ""description"": ""string"",
+ ""allow_comments"": true,
+
+
+  ""string""
+ ],
+ ""status_indicator"": 1,
+ ""status_indicator_expiry_date"": ""string"",
+ ""exclude_from_search"": true,
+ ""related_articles"": [
+  ""string""
+
+
+"
+73,https://apidocs.document360.com/apidocs/update-multiple-page-categories,Update multiple page categories,PUT,/v2/Categories/bulkupdateContent,"[
+ {
+  ""category_id"": ""string"",
+  ""lang_code"": ""string"",
+  ""title"": ""string"",
+  ""content"": ""string"",
+  ""html_content"": ""string"",
+  ""block_content"": ""string"",
+  ""version_number"": 1,
+  ""translation_option"": ""string"",
+
+
+ }
+]
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/bulkupdateContent \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '[
+ {
+  ""category_id"": ""string"",
+  ""lang_code"": ""string"",
+  ""title"": ""string"",
+
+
+  ""block_content"": ""string"",
+  ""version_number"": 1,
+  ""translation_option"": ""string"",
+  ""source"": ""string"",
+  ""updated_by"": ""string""
+ }
+]'
+
+
+"
+74,https://apidocs.document360.com/apidocs/fork-category-page-with-an-id,Fork category page with an id,PUT,/v2/Categories/{categoryId}/fork,"{
+ ""version_number"": 1,
+ ""user_id"": ""string"",
+ ""lang_code"": ""string""
+}
+curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/fork \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json-patch+json' \
+  --data '{
+ ""version_number"": 1,
+ ""user_id"": ""string"",
+ ""lang_code"": ""string""
+}'
+
+
+"
+75,https://apidocs.document360.com/apidocs/update-the-category-type,Update the Category Type,PUT,/v2/Categories/{categoryId}/updateCategoryType,"curl --request PUT \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/updateCategoryType \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+76,https://apidocs.document360.com/apidocs/delete-category-version,Delete category Version,DELETE,/v2/Categories/{categoryId}/{langCode}/version/{versionNumber},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D/en/version/%7BversionNumber%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+77,https://apidocs.document360.com/apidocs/delete-multiple-category-versions,Delete multiple category versions,DELETE,/v2/Categories/bulkdelete-category-versions,"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Categories/bulkdelete-category-versions \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
+78,https://apidocs.document360.com/apidocs/delete-a-category,Deletes an category with an ID,DELETE,/v2/Categories/{categoryId},"curl --request DELETE \
+  --url https://apihub.document360.io/v2/Categories/%7BcategoryId%7D \
+  --header 'accept: application/json' \
+  --header 'api_token: REPLACE_KEY_VALUE'
+
+"
