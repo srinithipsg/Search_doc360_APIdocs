@@ -5,7 +5,7 @@
 
 The objective of this project is to implement question answering task on a webpage documentation, where users input API endpoints, and the system retrieves the corresponding code samples from the respective endpoints.
 
-Here's a step-by-step breakdown of our project's objective and process:
+Here's a step-by-step breakdown of the process:
 
 **1) Web Scraping with Selenium**: Selenium, a powerful web automation tool, is used to scrape content from the documentation website. The following contents are extracted: API endpoints, HTTP request details, code samples, and page titles.
 
